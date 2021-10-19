@@ -1,0 +1,77 @@
+source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
+
+alias ll='ls -alh'
+alias copy='xclip -selection clipboard'
+alias up="docker-compose up -d"
+alias down="docker-compose down"
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias bye='sudo shutdown -h now'
+alias pstorm="phpstorm . &"
+alias c="vim ."
+alias e='exit';
+alias shutdow="sudo shutdown -h now"
+alias reboot="sudo reboot -h now"
+alias my-ip="wget -qO- http://ipecho.net/plain | xargs echo"
+alias composer=/usr/local/bin/composer
+alias nvim="/usr/bin/nvim"
+alias vim="nvim"
+
+alias e='exit'
+alias br='i3lock'
+alias le='sudo shutdown -h now'
+
+alias wip='git commit -am "WIP"'
+alias wip!='git add . && wip'
+
+# dev aliases
+alias config='cd && cd .config/nvim && vim .'
+alias dev='cd && cd Documents/Dev/'
+alias perso='dev && cd Perso'
+alias pro='dev && cd Pro'
+alias traefik='pro && cd internal-tools/stack'
+alias apm='pro && cd internal-tools/apm'
+alias ads='pro && cd internal-tools/ads'
+
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+start() {
+    /home/boris/bobo_dev/tmux/start-project/start.sh $1
+}
+
+inside() {
+    docker exec -ti $1 bash
+}
+
+gophp() {
+    echo "Current version: "$(php -v | head -n1 | cut -d" " -f2)
+    newVersion="php"$1
+    newVersionPath=$(which $newVersion)
+    phpPath=$(which php)
+
+    if [ -f $newVersionPath ]; then
+        sudo rm $phpPath
+        echo "$phpPath has been removed";
+
+        sudo ln -s $newVersionPath $phpPath
+        echo "$newVersionPath is now the new version of PHP";
+    else
+        echo "Version $newVersion does not exists!";
+    fi;
+}
+
+boum() {
+    free -h
+    sudo sh -c "sync; echo 2 > /proc/sys/vm/drop_caches"
+    docker ps --filter status=dead --filter status=exited -aq | xargs docker rm -v > /dev/null 2>&1;
+    docker images --no-trunc | grep '<none>' | awk '{ print $3 }' | xargs -r docker rmi > /dev/null 2>&1;
+    free -h
+}
+
+export PATH=~/.npm-global/bin:$PATH
+
+
