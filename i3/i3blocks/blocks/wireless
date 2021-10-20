@@ -1,0 +1,14 @@
+#!/bin/bash
+# -*- mode: sh -*-
+
+id=$(iwgetid)
+if [[ $(iwgetid) ]];then
+    echo "   Wifi UP   "
+    echo "   Wifi UP   "
+    echo "#458b74"
+else
+    echo "   Wifi DOWN   "
+    echo "   Wifi DOWN   "
+    echo "#ff6c60"
+    exit
+fi

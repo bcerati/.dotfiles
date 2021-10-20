@@ -19,14 +19,18 @@ if [ $1 = $coursesSessionName ]; then
     tmux new-window -t $coursesSessionName: -n CODE
     tmux send-keys -t $coursesSessionName:CODE "cd $coursesPath" C-m "vim ." C-m
 
-    tmux new-window -t $coursesSessionName: -n CSS -d \
-      "cd $coursesPath && npm run css:watch"
+    tmux new-window -t $coursesSessionName: -n CSS
+    tmux send-keys -t $coursesSessionName:CSS "cd $coursesPath && npm run css:watch" C-m
 
-    tmux new-window -t $coursesSessionName: -n REMIX -d \
-      "cd $coursesPath && npm run dev"
+    tmux new-window -t $coursesSessionName: -n REMIX
+    tmux send-keys -t $coursesSessionName:REMIX "cd $coursesPath && npm run dev" C-m
 
-    tmux new-window -t $coursesSessionName: -n VERCEL -d \
-      "cd $coursesPath && npm run start"
+    tmux new-window -t $coursesSessionName: -n VERCEL
+    tmux send-keys -t $coursesSessionName:VERCEL "cd $coursesPath && npm run start" C-m
+
+    tmux new-window -t $coursesSessionName: -n POSTGREST
+    tmux send-keys -t $coursesSessionName:POSTGREST "postgrest $coursesPath/postgrest.conf" C-m
+
   fi
 fi
 

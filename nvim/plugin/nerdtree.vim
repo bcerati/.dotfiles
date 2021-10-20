@@ -1,4 +1,4 @@
-nmap <leader>nt <cmd>NERDTreeToggle<CR>
+nmap <leader>nn <cmd>NERDTreeToggle<CR>
 nmap <leader>nf <cmd>NERDTreeFind<CR>
 
 let NERDTreeShowHidden=1

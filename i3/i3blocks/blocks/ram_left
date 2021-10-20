@@ -1,0 +1,8 @@
+#!/bin/bash
+# -*- mode: sh -*-
+
+left=$(free -h | grep Mem | awk '{print $7 " / " $2}')
+
+echo "   Ram $left   "
+echo "   Ram $left   "
+echo "#ffff66"
