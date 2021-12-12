@@ -1,4 +1,0 @@
-colorscheme gruvbox
-
-let mapleader=" "
-

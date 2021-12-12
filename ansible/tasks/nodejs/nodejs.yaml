@@ -1,0 +1,63 @@
+- name: Install the gpg key for nodejs LTS
+  become: true
+  apt_key:
+    url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
+    state: present
+  tags:
+    - install
+    - nodejs
+
+- name: Install the nodejs LTS repos
+  become: true
+  apt_repository:
+    repo: "deb https://deb.nodesource.com/node_{{ nodejs_lts }}.x {{ lsb_release }} main"
+    state: present
+    update_cache: yes
+  tags:
+    - install
+    - nodejs
+
+- name: Install the nodejs
+  become: true
+  apt:
+    name: nodejs
+    state: present
+  tags:
+    - install
+    - nodejs
+
+- name: Create NPM directory
+  file:
+    path: ~/.npm-global
+    state: directory
+  changed_when: False
+  tags:
+    - install
+    - nodejs
+
+- name: Define .npm-global as npm dir
+  shell:
+    cmd: npm config set prefix '~/.npm-global'
+  tags:
+    - install
+    - nodejs
+
+- name: Replace a localhost entry with our own
+  lineinfile:
+    path: ~/.profile
+    line: 'export PATH=~/.npm-global/bin:$PATH'
+    mode: '0644'
+  tags:
+    - install
+    - nodejs
+
+- name: Installing npm "n" package
+  become: true
+  become_user: '{{ item }}'
+  npm:
+    name: n
+    global: yes
+  loop: ['root', '{{ ansible_user }}']
+  tags:
+    - install
+    - nodejs

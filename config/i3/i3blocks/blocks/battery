@@ -1,0 +1,16 @@
+#!/bin/bash
+# -*- mode: sh -*-
+
+BAT=$(acpi -b | grep -E -o '[0-9]{1,3}?%')
+batUsage=`echo $BAT | tr -d "%"`
+
+if [[ $batUsage == '' ]]; then
+  BAT='100%'
+elif [[ $batUsage -lt 10 ]]; then
+  notify-send --icon=gtk-info "[WARNING] Hey Boris, battery low ($BAT)!"
+fi;
+
+# Full and short texts
+echo "   Bat $BAT   "
+echo "#ffff66"
+

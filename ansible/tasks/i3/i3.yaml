@@ -1,0 +1,30 @@
+- name: Installing i3
+  become: true
+  apt:
+    pkg:
+      - i3
+      - i3blocks
+      - i3blocks
+      - rofi
+  tags:
+    - install
+    - i3
+
+- name: Remove i3 config dirs
+  ansible.builtin.file:
+    path: ~/.config/{{ item }}
+    state: absent
+  loop: ['i3', 'i3blocks', 'i3status']
+  tags:
+    - install
+    - i3
+
+- name: Activate i3 config files
+  file:
+    src: ~/bobo_dev/config/i3/{{ item }}
+    dest: ~/.config/{{ item }}
+    state: link
+  loop: ['i3', 'i3blocks', 'i3status']
+  tags:
+    - install
+    - i3

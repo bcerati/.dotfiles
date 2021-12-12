@@ -1,0 +1,8 @@
+- name: Installing Discord
+  become: true
+  snap:
+    name: discord
+    classic: yes
+  tags:
+    - install
+    - discord

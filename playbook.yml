@@ -1,0 +1,19 @@
+- hosts: '{{ target }}'
+  pre_tasks:
+    - name: Update repositories
+      become: true
+      apt: update_cache=yes
+      changed_when: False
+  tasks:
+    - include: tasks/_global/global.yaml
+    - include: tasks/browser/browser.yaml
+    - include: tasks/i3/i3.yaml
+    - include: tasks/zsh/zsh.yaml
+    - include: tasks/phpstorm/phpstorm.yaml
+    - include: tasks/discord/discord.yaml
+    - include: tasks/docker/docker.yaml
+    - include: tasks/nodejs/nodejs.yaml
+    - include: tasks/php/php.yaml
+    - include: tasks/spotify/spotify.yaml
+    - include: tasks/virtualbox/virtualbox.yaml
+    - include: tasks/nvim/nvim.yaml

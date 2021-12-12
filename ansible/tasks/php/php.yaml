@@ -1,0 +1,51 @@
+- apt_repository:
+    repo: ppa:ondrej/php
+    state: present
+    filename: php
+    mode: 0666
+  become: true
+  tags:
+    - install
+    - php
+
+- name: Install PHP with some extensions
+  become: true
+  apt:
+    pkg:
+      - 'php{{ item }}'
+      - 'php{{ item }}-curl'
+      - 'php{{ item }}-dom'
+      - 'php{{ item }}-intl'
+      - 'php{{ item }}-ldap'
+      - 'php{{ item }}-mbstring'
+      - 'php{{ item }}-mysql'
+      - 'php{{ item }}-pgsql'
+      - 'php{{ item }}-soap'
+      - 'php{{ item }}-xml'
+      - 'php{{ item }}-zip'
+  loop: ['7.4', '8.0', '8.1']
+  tags:
+    - install
+    - php
+
+- name: Check if composer is installed
+  command: ls -al /usr/local/bin
+  register: composer_install_check
+  tags:
+    - install
+    - php
+
+- name: Downloading Composer
+  script: scripts/install-composer.sh
+  tags:
+    - install
+    - php
+  when: composer_install_check.stdout.find('composer') == -1
+
+- name: Move Composer globally
+  become: true
+  command: mv composer.phar /usr/local/bin/composer
+  tags:
+    - install
+    - php
+  when: composer_install_check.stdout.find('composer') == -1

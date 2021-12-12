@@ -1,24 +1,20 @@
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
 alias ll='ls -alh'
 alias copy='xclip -selection clipboard'
-alias up="docker-compose up -d"
-alias down="docker-compose down"
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias bye='sudo shutdown -h now'
-alias pstorm="phpstorm . &"
 alias c="vim ."
 alias e='exit';
-alias shutdow="sudo shutdown -h now"
-alias reboot="sudo reboot -h now"
 alias my-ip="wget -qO- http://ipecho.net/plain | xargs echo"
 alias composer=/usr/local/bin/composer
-alias nvim="/usr/bin/nvim"
+alias nvim="/usr/local/bin/nvim"
 alias vim="nvim"
 
 alias e='exit'
@@ -33,11 +29,9 @@ alias config='cd && cd .config/nvim && vim .'
 alias dev='cd && cd Documents/Dev/'
 alias perso='dev && cd Perso'
 alias pro='dev && cd Pro'
-alias traefik='pro && cd internal-tools/stack'
-alias apm='pro && cd internal-tools/apm'
-alias ads='pro && cd internal-tools/ads'
 
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:/home/boris/go/bin:$PATH"
+export PATH="$HOME/tools/lua-language-server/bin/Linux:$PATH"
 
 start() {
     /home/boris/bobo_dev/tmux/start-project/start.sh $1
@@ -73,5 +67,3 @@ boum() {
 }
 
 export PATH=~/.npm-global/bin:$PATH
-
-

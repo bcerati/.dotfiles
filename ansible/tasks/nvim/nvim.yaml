@@ -1,0 +1,90 @@
+- name: Install softwares needed for building neovim
+  become: true
+  apt:
+    pkg:
+      - ninja-build
+      - gettext
+      - libtool
+      - libtool-bin
+      - autoconf
+      - automake
+      - gcc
+      - g++
+      - doxygen
+      - pkg-config
+      - cmake
+      - ripgrep
+  tags:
+    - install
+    - nvim
+
+- name: Clone nvim
+  become: true
+  ansible.builtin.git:
+    repo: 'https://github.com/neovim/neovim.git'
+    dest: "~/neovim"
+    version: release-0.6
+  tags:
+    - install
+    - nvim
+
+- name: Build nvim
+  become: true
+  shell: "cd ~/neovim && make"
+  tags:
+    - install
+    - nvim
+
+- name: Install nvim
+  become: true
+  shell: "cd ~/neovim && make install"
+  tags:
+    - install
+    - nvim
+
+- name: nvim Plugin Development 1
+  become: true
+  apt:
+    pkg:
+      - luarocks
+  tags:
+    - install
+    - nvim
+
+- name: Install Vim-Plug
+  become: true
+  shell: curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  tags:
+    - install
+    - nvim
+
+- name: Install vim Plugins
+  become: true
+  shell: nvim +PlugInstall +qall +silent
+  tags:
+    - install
+    - nvim
+
+- name: Delete nvim directory
+  become: true
+  file:
+    state: absent
+    path: ~/neovim
+  tags:
+    - install
+    - nvim
+
+- name: Installing some npm package
+  npm:
+    name: n
+    global: yes
+  loop: ['typescript-language-server', 'typescript', 'intelephense']
+  tags:
+    - install
+    - nodejs
+
+- name: Upgrade pynvim
+  shell: python3 -m pip install --user --upgrade pynvim
+  tags:
+    - install
+    - nvim

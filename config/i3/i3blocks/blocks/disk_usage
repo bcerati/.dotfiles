@@ -1,0 +1,7 @@
+#!/bin/bash
+# -*- mode: sh -*-
+
+usage=$(df -h / | grep nvme0 | awk '{print $4}')
+echo "   Disk $usage   "
+echo "   Disk $usage   "
+echo "#0099ff"

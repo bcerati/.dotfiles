@@ -1,0 +1,32 @@
+- name: Installing softwres
+  become: true
+  apt:
+    pkg:
+      - git
+      - ssh
+      - vim
+      - curl
+      - gcc
+      - make
+      - wget
+      - software-properties-common
+      - python3-pip
+      - python3-setuptools
+      - snapd
+      - snapd-xdg-open
+      - xclip
+      - mlocate
+  tags:
+    - install
+    - browser
+    - i3
+    - zsh
+    - phpstorm
+    - dev
+    - discord
+    - docker
+    - nodejs
+    - php
+    - spotify
+    - virtualbox
+    - nvim

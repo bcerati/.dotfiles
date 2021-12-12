@@ -1,0 +1,9 @@
+- name: Installing JetBrains PhpStorm
+  become: true
+  snap:
+    name: phpstorm
+    classic: yes
+  tags:
+    - install
+    - phpstorm
+    - dev

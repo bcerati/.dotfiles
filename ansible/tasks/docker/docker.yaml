@@ -1,0 +1,57 @@
+- name: Install required system packages for Docker
+  become: true
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+      - virtualenv
+      - python3-setuptools
+  tags:
+    - install
+    - docker
+
+- name: Add Docker GPG apt Key
+  become: true
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  tags:
+    - install
+    - docker
+
+- name: Add Docker Repository
+  become: true
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+  tags:
+    - install
+    - docker
+
+- name: Update apt and install docker-ce
+  become: true
+  apt: update_cache=yes name=docker-ce state=latest
+  tags:
+    - install
+    - docker
+
+- name: Install Docker Module for Python
+  become: true
+  pip:
+    name: docker
+  tags:
+    - install
+    - docker
+
+- name: Adding user to Docker group
+  become: true
+  user:
+    name: '{{ ansible_user }}'
+    groups: docker
+    append: yes
+  tags:
+    - install
+    - docker

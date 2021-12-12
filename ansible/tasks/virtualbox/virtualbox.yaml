@@ -1,0 +1,25 @@
+- name: Add VirtualBox apt key
+  apt_key:
+    url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    state: present
+  become: true
+  tags:
+    - install
+    - virtualbox
+
+- apt_repository:
+    repo: deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian {{ lsb_release }} contrib
+    state: present
+    filename: virtualbox
+  become: true
+  tags:
+    - install
+    - virtualbox
+
+- name: Installing Virtualbox
+  become: true
+  apt:
+    name: virtualbox-6.0
+  tags:
+    - install
+    - virtualbox
