@@ -1,0 +1,25 @@
+- name: Installing tmux
+  become: true
+  apt:
+    pkg:
+      - tmux
+  tags:
+    - install
+    - tmux
+
+- name: Remove tmux config
+  ansible.builtin.file:
+    path: ~/.tmux.conf
+    state: absent
+  tags:
+    - install
+    - tmux
+
+- name: Activate tmux config file
+  file:
+    src: ~/bobo_dev/config/tmux/.tmux.conf
+    dest: ~/.tmux.conf
+    state: link
+  tags:
+    - install
+    - tmux

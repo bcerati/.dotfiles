@@ -2,7 +2,9 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
+alias cat='bat'
 alias ll='ls -alh'
+alias l='ls -alh'
 alias copy='xclip -selection clipboard'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -29,17 +31,10 @@ alias config='cd && cd .config/nvim && vim .'
 alias dev='cd && cd Documents/Dev/'
 alias perso='dev && cd Perso'
 alias pro='dev && cd Pro'
+alias k="kubectl"
+alias gr="go run ."
 
 export PATH="$HOME/.composer/vendor/bin:/home/boris/go/bin:$PATH"
-export PATH="$HOME/tools/lua-language-server/bin/Linux:$PATH"
-
-start() {
-    /home/boris/bobo_dev/tmux/start-project/start.sh $1
-}
-
-inside() {
-    docker exec -ti $1 bash
-}
 
 gophp() {
     echo "Current version: "$(php -v | head -n1 | cut -d" " -f2)
@@ -66,4 +61,33 @@ boum() {
     free -h
 }
 
+clear_folders() {
+  echo 'Clear vendors...';
+  find . -name "vendor" -type d -prune -exec rm -rf '{}' +
+
+  echo 'Clear node_modules...';
+  find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+}
+
 export PATH=~/.npm-global/bin:$PATH
+# BEGIN ANSIBLE MANAGED BLOCK - changes for golang
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH:/usr/local/go/bin
+# END ANSIBLE MANAGED BLOCK - changes for golang
+
+fssh() {
+  if [[ ! -z $1 ]]; then
+    $(cat ~/.ssh/config | grep -E "^Host (.*)-$1$" | sed "s/Host /ssh /g" | fzf)
+  else
+    $(cat ~/.ssh/config | grep -E "^Host (.*)$" | sed "s/Host /ssh /g" | fzf)
+  fi;
+}
+
+# override the git_branch function from ZSHRC => it does'nt work on subdirectories...
+git_branch() {
+    gitBranch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ on \1/')
+    echo $gitBranch
+}
+
+export KUBE_EDITOR=/usr/local/bin/nvim

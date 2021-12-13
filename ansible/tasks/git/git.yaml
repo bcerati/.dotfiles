@@ -1,0 +1,18 @@
+- name: Installing Git
+  become: true
+  apt:
+    pkg:
+      - git
+  tags:
+    - install
+    - git
+
+- name: Activate git config file
+  file:
+    src: ~/bobo_dev/config/git/{{ item }}
+    dest: ~/{{ item }}
+    state: link
+  loop: ['.gitconfig', '.gitignore_global']
+  tags:
+    - install
+    - git

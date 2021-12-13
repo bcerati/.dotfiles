@@ -16,8 +16,15 @@
       - snapd-xdg-open
       - xclip
       - mlocate
+      - pavucontrol
+      - libnss3-tools
+      - flameshot
+      - arandr
+      - fd-find
   tags:
+    - softwares
     - install
+    - git
     - browser
     - i3
     - zsh
@@ -30,3 +37,10 @@
     - spotify
     - virtualbox
     - nvim
+    - vscode
+    - rust
+    - gimp
+    - treafik
+    - go
+    - tmux
+    - tools

@@ -1,0 +1,164 @@
+[
+  {
+    "name": "fda",
+    "windows": [
+      {
+        "name": "WORKDIR",
+        "commands": [
+          {
+            "run": "pro && cd fda",
+            "enter": true,
+            "clear": true
+          },
+
+          {
+            "run": "docker-compose up -d",
+            "enter": true,
+            "waitForIt": true,
+            "clear": true
+          }
+        ]
+      },
+
+      {
+        "name": "CODE",
+        "commands": [
+          {
+            "run": "pro && cd fda",
+            "enter": true,
+            "clear": true
+          },
+
+          {
+            "run": "nvim ."
+          }
+        ]
+      },
+
+      {
+        "name": "APP_LOGS",
+        "commands": [
+          {
+            "run": "pro && cd fda",
+            "enter": true,
+            "clear": true
+          },
+          {
+            "run": "docker logs -f fda_php",
+            "enter": true,
+            "needWaitGroup": true
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "name": "cvl",
+    "windows": [
+      {
+        "name": "WORKDIR",
+        "commands": [
+          {
+            "run": "pro && cd CVDL/centre-val-de-loire",
+            "enter": true,
+            "clear": true
+          },
+
+          {
+            "run": "docker-compose up -d",
+            "enter": true,
+            "waitForIt": true,
+            "clear": true
+          }
+        ]
+      },
+
+      {
+        "name": "CODE",
+        "commands": [
+          {
+            "run": "pro && cd CVDL/centre-val-de-loire",
+            "enter": true,
+            "clear": true
+          },
+
+          {
+            "run": "nvim ."
+          }
+        ]
+      },
+
+      {
+        "name": "APP_LOGS",
+        "commands": [
+          {
+            "run": "pro && cd CVDL/centre-val-de-loire",
+            "enter": true,
+            "clear": true
+          },
+          {
+            "run": "docker logs -f cvl_cre_web",
+            "enter": true,
+            "needWaitGroup": true
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "name": "apm",
+    "windows": [
+      {
+        "name": "WORKDIR",
+        "commands": [
+          {
+            "run": "pro && cd internal-tools/apm",
+            "enter": true,
+            "clear": true
+          },
+
+          {
+            "run": "docker-compose up -d",
+            "enter": true,
+            "waitForIt": true,
+            "clear": true
+          }
+        ]
+      },
+
+      {
+        "name": "CODE",
+        "commands": [
+          {
+            "run": "pro && cd internal-tools/apm",
+            "enter": true,
+            "clear": true
+          },
+
+          {
+            "run": "nvim ."
+          }
+        ]
+      },
+
+      {
+        "name": "APP_LOGS",
+        "commands": [
+          {
+            "run": "pro && cd internal-tools/apm",
+            "enter": true,
+            "clear": true
+          },
+          {
+            "run": "docker logs -f apm_web",
+            "enter": true,
+            "needWaitGroup": true
+          }
+        ]
+      }
+
+    ]
+  }
+]

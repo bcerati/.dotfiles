@@ -49,3 +49,25 @@
     - install
     - php
   when: composer_install_check.stdout.find('composer') == -1
+
+- name: Download Symfony binary installer
+  get_url:
+    url: https://get.symfony.com/cli/installer
+    dest: /tmp/sf-installer.sh
+    mode: 0755
+  tags:
+    - install
+    - php
+
+- name: Execute the Symfony binary installer
+  become: true
+  shell: /tmp/sf-installer.sh --install-dir=/usr/local/bin
+  tags:
+    - install
+    - php
+
+- name: Remove the Symfony binary installer.sh
+  file: path=/tmp/sf-installer.sh state=absent
+  tags:
+    - install
+    - php

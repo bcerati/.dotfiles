@@ -61,3 +61,12 @@
   tags:
     - install
     - nodejs
+
+- name: Installing npm packages
+  npm:
+    name: '{{ item }}'
+    global: yes
+  loop: ['typescript']
+  tags:
+    - install
+    - nodejs

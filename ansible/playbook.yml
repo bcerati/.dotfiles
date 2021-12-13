@@ -1,0 +1,27 @@
+- hosts: '{{ target }}'
+  vars:
+    docker_compose_version: 'v2.16.0'
+    go_version: '1.20.1'
+  pre_tasks:
+    - name: Update repositories
+      become: true
+      apt: update_cache=yes
+      changed_when: False
+  tasks:
+    - include: tasks/_global/global.yaml
+    - include: tasks/browser/browser.yaml
+    - include: tasks/i3/i3.yaml
+    - include: tasks/tmux/tmux.yaml
+    - include: tasks/git/git.yaml
+    - include: tasks/zsh/zsh.yaml
+    - include: tasks/phpstorm/phpstorm.yaml
+    - include: tasks/vscode/vscode.yaml
+    - include: tasks/discord/discord.yaml
+    - include: tasks/docker/docker.yaml
+    - include: tasks/nodejs/nodejs.yaml
+    - include: tasks/php/php.yaml
+    - include: tasks/nvim/nvim.yaml
+    - include: tasks/rust/rust.yaml
+    - include: tasks/traefik/traefik.yaml
+    - include: tasks/go/go.yaml
+    - include: tasks/tools/tools.yaml

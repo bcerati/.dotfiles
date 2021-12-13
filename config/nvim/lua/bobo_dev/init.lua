@@ -1,0 +1,11 @@
+require("bobo_dev.packer")
+require("bobo_dev.settings")
+
+require("bobo_dev.barbar")
+require("bobo_dev.lualine")
+require("bobo_dev.indent_blankline")
+require("bobo_dev.treesitter")
+require("bobo_dev.harpoon")
+require("bobo_dev.nvim-tree")
+require("bobo_dev.prettier")
+require("bobo_dev.hop")

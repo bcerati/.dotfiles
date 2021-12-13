@@ -1,0 +1,58 @@
+- name: Install required system packages for Traefik
+  become: true
+  apt:
+    pkg:
+      - libnss3-tools
+  tags:
+    - install
+    - traefik
+
+- name: Clone mkcert
+  ansible.builtin.git:
+    repo: 'https://github.com/FiloSottile/mkcert'
+    dest: "~/mkcert"
+  tags:
+    - install
+    - traefik
+
+- name: Build mkcert
+  shell:
+    cmd: /usr/local/go/bin/go build -ldflags "-X main.Version=$(git describe --tags)"
+    chdir: ~/mkcert
+  tags:
+    - install
+    - traefik
+
+- name: Install mkcert certs
+  become: true
+  shell:
+    cmd: /home/{{ ansible_user }}/mkcert/mkcert -install
+  tags:
+    - install
+    - traefik
+
+- name: Create directory containing certificates
+  shell:
+    cmd: mkdir -p certs
+    chdir: ~
+  tags:
+    - install
+    - traefik
+
+- name: Create certificates
+  shell:
+    cmd: ~/mkcert/mkcert -cert-file certs/local-cert.pem -key-file certs/local-key.pem "*.local" "*.adimeo.local" "*.docker.local" "*.dev.local"
+    chdir: ~
+  tags:
+    - install
+    - traefik
+
+- name: Activate traefik certificates
+  become: true
+  file:
+    src: /home/{{ ansible_user }}/certs
+    dest: /certs
+    state: link
+  tags:
+    - install
+    - traefik

@@ -14,11 +14,13 @@
       - pkg-config
       - cmake
       - ripgrep
+      - vim-airline
+      - fonts-powerline
   tags:
     - install
     - nvim
 
-- name: Clone nvim
+- name: Clone nvim (may take a while)
   become: true
   ansible.builtin.git:
     repo: 'https://github.com/neovim/neovim.git'
@@ -28,7 +30,7 @@
     - install
     - nvim
 
-- name: Build nvim
+- name: Build nvim (may take a while)
   become: true
   shell: "cd ~/neovim && make"
   tags:
@@ -78,7 +80,7 @@
   npm:
     name: n
     global: yes
-  loop: ['typescript-language-server', 'typescript', 'intelephense']
+  loop: ['typescript-language-server', 'typescript', 'intelephense', 'bash-language-server']
   tags:
     - install
     - nodejs
@@ -88,3 +90,102 @@
   tags:
     - install
     - nvim
+
+- name: Activate nvim config files
+  file:
+    src: ~/bobo_dev/config/nvim
+    dest: ~/.config/nvim
+    state: link
+  tags:
+    - install
+    - nvim
+
+- name: Installing required npm packages
+  npm:
+    name: n
+    global: yes
+  loop: ['typescript-language-server', 'intelephense']
+  tags:
+    - install
+    - nvim
+
+- name: Clone Powerline fonts
+  ansible.builtin.git:
+    repo: 'https://github.com/powerline/fonts.git'
+    dest: "/tmp/powerline"
+  tags:
+    - install
+    - nvim
+
+- name: Execute the Powerline fonts installer
+  become: true
+  shell: /tmp/powerline/install.sh
+  tags:
+    - install
+    - nvim
+
+- name: Remove the Powerline fonts installer
+  file: path=/tmp/powerline state=absent
+  tags:
+    - install
+    - nvim
+
+- name: Ensures font directory exists
+  file: path={{ item }} state=directory
+  loop: ['~/.local/share/fonts/', '~/.config/fontconfig/conf.d/']
+  tags:
+    - install
+    - nvim
+
+- name: Download fonts
+  get_url:
+    url: "https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf"
+    dest: "~/.local/share/fonts/"
+  tags:
+    - install
+    - nvim
+
+- name: Download font config
+  get_url:
+    url: "https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf"
+    dest: "~/.config/fontconfig/conf.d/"
+  tags:
+    - install
+    - nvim
+
+- name: Clone Nerd fonts (it may be very long (2gb to clone))
+  ansible.builtin.git:
+    repo: 'https://github.com/ryanoasis/nerd-fonts.git'
+    dest: "/tmp/nerd-font"
+  tags:
+    - install
+    - nvim
+
+- name: Execute the Nerd fonts installer
+  become: true
+  shell: /tmp/nerd-font/install.sh
+  tags:
+    - install
+    - nvim
+
+- name: Remove the Nerd fonts installer
+  file: path=/tmp/nerd-font state=absent
+  tags:
+    - install
+    - nvim
+
+- name: Activate fonts
+  shell: "fc-cache -vf ~/.local/share/fonts/"
+  tags:
+    - install
+    - nvim
+
+- name: Installing GoPls for Go autocomplete
+  become: true
+  snap:
+    name: gopls
+    classic: yes
+  tags:
+    - install
+    - nvim
+
