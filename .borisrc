@@ -67,3 +67,31 @@ boum() {
 }
 
 export PATH=~/.npm-global/bin:$PATH
+# BEGIN ANSIBLE MANAGED BLOCK - changes for golang
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH:/usr/local/go/bin
+# END ANSIBLE MANAGED BLOCK - changes for golang
+
+
+# Recette :
+alias us_connect_rec_web='sshpass -p "adimeo_WEB" ssh -o StrictHostKeyChecking=no adimeo@192.168.7.186'
+alias us_connect_rec_bdd='sshpass -p "adimeo_BDD" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.224'
+alias us_connect_rec_app='sshpass -p "adimeo_APP" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.225'
+alias us_connect_rec_elk='sshpass -p "adimeo_ELK" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.226'
+alias us_connect_rec_ldap='sshpass -p "adimeo_LDAP" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.227'
+alias us_connect_rec_ads='sshpass -p "adimeo_ADS" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.228'
+# Preprod :
+alias us_connect_pp_web='sshpass -p "adimeo_WEB" ssh -o StrictHostKeyChecking=no adimeo@192.168.7.221'
+alias us_connect_pp_bdd='sshpass -p "adimeo_BDD" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.185'
+alias us_connect_pp_app='sshpass -p "adimeo_APP" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.186'
+alias us_connect_pp_elk='sshpass -p "adimeo_ADS" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.187'
+alias us_connect_pp_ldap='sshpass -p "adimeo_LDAP" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.188'
+# Prod
+alias us_connect_prod_web='sshpass -p "adimeo_WEB" ssh -o StrictHostKeyChecking=no adimeo@192.168.7.184'
+alias us_connect_prod_bdd='sshpass -p "adimeo_BDD" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.181'
+alias us_connect_prod_app='sshpass -p "adimeo_APP" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.182'
+alias us_connect_prod_elk='sshpass -p "adimeo_ELK" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.183'
+alias us_connect_prod_ldap='sshpass -p "adimeo_LDAP" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.184'
+alias us_connect_prod_ads='sshpass -p "adimeo_ADS" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.183'
+

@@ -1,0 +1,9 @@
+- name: Installing vscode
+  become: true
+  snap:
+    name: code
+    classic: yes
+  tags:
+    - install
+    - vscode
+    - dev

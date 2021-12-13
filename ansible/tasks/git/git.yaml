@@ -1,0 +1,17 @@
+- name: Installing Git
+  become: true
+  apt:
+    pkg:
+      - git
+  tags:
+    - install
+    - git
+
+- name: Copy Git Config files
+  copy:
+    src: 'config/{{ item }}'
+    dest: ~/
+  loop: ['.gitconfig', '.gitignore_global']
+  tags:
+    - install
+    - git

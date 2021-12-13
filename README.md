@@ -48,4 +48,5 @@ You'll need to do some post installation steps. Here are the steps:
 ```shell
 :CocInstall coc-json coc-tsserver # inside of nvim
 :CocInstall coc-snippets # inside of nvim
+:CocInstall coc-rust-analyzer # inside of nvim
 ```

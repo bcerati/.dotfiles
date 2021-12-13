@@ -1,0 +1,8 @@
+- name: Installing Gimp
+  become: true
+  apt:
+    pkg:
+      - gimp
+  tags:
+    - install
+    - gimp

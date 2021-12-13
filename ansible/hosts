@@ -5,7 +5,7 @@ lsb_release=focal
 nodejs_lts='16'
 
 [localhost]
-local ansible_host=192.168.1.49
+local ansible_host=127.0.0.1
 local ansible_user=boris
 local ansible_password=dqhgz51
 local ansible_become_password=dqhgz51
