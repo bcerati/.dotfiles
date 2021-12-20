@@ -1,0 +1,3 @@
+[submodule "config/tmux/start-project/scripts"]
+	path = config/tmux/start-project/scripts
+	url = git@github.com:bcerati/tmux-scripts.git

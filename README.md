@@ -27,6 +27,8 @@ This line is necessary to make ssh work.
 
 ## Executing Ansible
 
+Caution: clone this repository with --recursive option (`git clone --recursive ...`) so it'll pull all the submodules for you!
+
 ```
 ansible-playbook \
   -i hosts playbook.yml \
@@ -49,4 +51,5 @@ You'll need to do some post installation steps. Here are the steps:
 :CocInstall coc-json coc-tsserver # inside of nvim
 :CocInstall coc-snippets # inside of nvim
 :CocInstall coc-rust-analyzer # inside of nvim
+:CocInstall coc-phpls # inside of nvim
 ```
