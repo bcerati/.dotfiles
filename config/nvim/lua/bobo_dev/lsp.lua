@@ -3,6 +3,11 @@ local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
 local nvim_lsp = require'lspconfig'
 
+local function config(_config)
+	return vim.tbl_deep_extend("force", {
+	}, _config or {})
+end
+
 nvim_lsp.tsserver.setup{ on_attach=require'completion'.on_attach }
 nvim_lsp.intelephense.setup{on_attach=require'completion'.on_attach}
 
@@ -30,3 +35,4 @@ require'lspconfig'.sumneko_lua.setup {
         },
     },
 }
+

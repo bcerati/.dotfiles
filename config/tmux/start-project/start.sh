@@ -6,7 +6,6 @@ fi;
 
 dev='/home/boris/Documents/Dev'
 
-for filename in /home/boris/bobo_dev/tmux/start-project/scripts/*.sh; do
+for filename in /home/boris/bobo_dev/config/tmux/start-project/scripts/*.sh; do
   $filename $1 $dev;
 done
-

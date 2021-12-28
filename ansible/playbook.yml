@@ -11,6 +11,7 @@
     - include: tasks/_global/global.yaml
     - include: tasks/browser/browser.yaml
     - include: tasks/i3/i3.yaml
+    - include: tasks/tmux/tmux.yaml
     - include: tasks/git/git.yaml
     - include: tasks/zsh/zsh.yaml
     - include: tasks/phpstorm/phpstorm.yaml

@@ -34,7 +34,7 @@ export PATH="$HOME/.composer/vendor/bin:/home/boris/go/bin:$PATH"
 export PATH="$HOME/tools/lua-language-server/bin/Linux:$PATH"
 
 start() {
-    /home/boris/bobo_dev/tmux/start-project/start.sh $1
+    /home/boris/bobo_dev/config/tmux/start-project/start.sh $1
 }
 
 inside() {

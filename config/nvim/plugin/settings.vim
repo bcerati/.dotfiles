@@ -1,5 +1,6 @@
 " this file contains all my "set" that customize wy f* vim experience
 
+set timeoutlen=500
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab

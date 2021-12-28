@@ -1,8 +1,6 @@
 set pyxversion=3
 
 call plug#begin('~/.vim/plugged')
-    "Plug 'file:///home/boris/Documents/Dev/Perso/nvim-php'
-    "Plug 'bcerati/nvim-php'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/playground'
 
@@ -38,6 +36,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Pocco81/HighStr.nvim'
 
     Plug 'simrat39/rust-tools.nvim'
+    Plug 'folke/which-key.nvim'
 call plug#end()
 
 let mapleader=" "

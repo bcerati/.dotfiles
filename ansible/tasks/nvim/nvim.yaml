@@ -20,29 +20,29 @@
     - install
     - nvim
 
-# - name: Clone nvim (may take a while)
-#   become: true
-#   ansible.builtin.git:
-#     repo: 'https://github.com/neovim/neovim.git'
-#     dest: "~/neovim"
-#     version: release-0.6
-#   tags:
-#     - install
-#     - nvim
+ - name: Clone nvim (may take a while)
+   become: true
+   ansible.builtin.git:
+     repo: 'https://github.com/neovim/neovim.git'
+     dest: "~/neovim"
+     version: release-0.6
+   tags:
+     - install
+     - nvim
 
-# - name: Build nvim (may take a while)
-#   become: true
-#   shell: "cd ~/neovim && make"
-#   tags:
-#     - install
-#     - nvim
+ - name: Build nvim (may take a while)
+   become: true
+   shell: "cd ~/neovim && make"
+   tags:
+     - install
+     - nvim
 
-# - name: Install nvim
-#   become: true
-#   shell: "cd ~/neovim && make install"
-#   tags:
-#     - install
-#     - nvim
+ - name: Install nvim
+   become: true
+   shell: "cd ~/neovim && make install"
+   tags:
+     - install
+     - nvim
 
 - name: nvim Plugin Development 1
   become: true
@@ -137,7 +137,7 @@
     - install
     - nvim
 
-- name: Download fonts 
+- name: Download fonts
   get_url:
     url: "https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf"
     dest: "~/.local/share/fonts/"
@@ -145,7 +145,7 @@
     - install
     - nvim
 
-- name: Download font config 
+- name: Download font config
   get_url:
     url: "https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf"
     dest: "~/.config/fontconfig/conf.d/"
@@ -168,14 +168,24 @@
     - install
     - nvim
 
-# - name: Remove the Nerd fonts installer
-#   file: path=/tmp/nerd-font state=absent
-#   tags:
-#     - install
-#     - nvim
+ - name: Remove the Nerd fonts installer
+   file: path=/tmp/nerd-font state=absent
+   tags:
+     - install
+     - nvim
 
 - name: Activate fonts
   shell: "fc-cache -vf ~/.local/share/fonts/"
   tags:
     - install
     - nvim
+
+- name: Installing GoPls for Go autocomplete
+  become: true
+  snap:
+    name: gopls
+    classic: yes
+  tags:
+    - install
+    - nvim
+

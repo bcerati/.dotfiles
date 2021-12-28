@@ -52,4 +52,5 @@ You'll need to do some post installation steps. Here are the steps:
 :CocInstall coc-snippets # inside of nvim
 :CocInstall coc-rust-analyzer # inside of nvim
 :CocInstall coc-phpls # inside of nvim
+:CocInstall coc-go # inside of nvim
 ```
