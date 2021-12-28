@@ -12,7 +12,7 @@ nnoremap <leader>ps <cmd>lua require('telescope.builtin').live_grep({additional_
 nnoremap <leader>vs <cmd>lua require('telescope.builtin').live_grep({ additional_args = LiveGrepAdditional_args, cwd = "/home/boris/.config/nvim"})<CR>
 
 "list all files in the root directory ignore .gitignore ones
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files({ hidden = true, find_command = { "rg", "-i", "--hidden", "--files", "-g", "!.git" } })<cr>
 
 "list all files in the root directory wth those that are ignored
 nnoremap <leader>pf <cmd>lua require('telescope.builtin').find_files({ no_ignore = true })<cr>

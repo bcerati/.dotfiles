@@ -20,7 +20,9 @@
       - libnss3-tools
       - flameshot
       - arandr
+      - fd-find
   tags:
+    - softwares
     - install
     - git
     - browser

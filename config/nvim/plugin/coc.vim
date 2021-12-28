@@ -12,7 +12,7 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 "rename all over the place!
 nmap <leader>rn <Plug>(coc-rename)
 
-let g:coc_global_extensions = ['coc-prettier']
+let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
 
 let g:prettier#requireConfig = 1
 

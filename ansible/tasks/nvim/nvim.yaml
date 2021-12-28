@@ -20,29 +20,29 @@
     - install
     - nvim
 
- - name: Clone nvim (may take a while)
-   become: true
-   ansible.builtin.git:
-     repo: 'https://github.com/neovim/neovim.git'
-     dest: "~/neovim"
-     version: release-0.6
-   tags:
-     - install
-     - nvim
+- name: Clone nvim (may take a while)
+  become: true
+  ansible.builtin.git:
+    repo: 'https://github.com/neovim/neovim.git'
+    dest: "~/neovim"
+    version: release-0.6
+  tags:
+    - install
+    - nvim
 
- - name: Build nvim (may take a while)
-   become: true
-   shell: "cd ~/neovim && make"
-   tags:
-     - install
-     - nvim
+- name: Build nvim (may take a while)
+  become: true
+  shell: "cd ~/neovim && make"
+  tags:
+    - install
+    - nvim
 
- - name: Install nvim
-   become: true
-   shell: "cd ~/neovim && make install"
-   tags:
-     - install
-     - nvim
+- name: Install nvim
+  become: true
+  shell: "cd ~/neovim && make install"
+  tags:
+    - install
+    - nvim
 
 - name: nvim Plugin Development 1
   become: true
@@ -168,11 +168,11 @@
     - install
     - nvim
 
- - name: Remove the Nerd fonts installer
-   file: path=/tmp/nerd-font state=absent
-   tags:
-     - install
-     - nvim
+- name: Remove the Nerd fonts installer
+  file: path=/tmp/nerd-font state=absent
+  tags:
+    - install
+    - nvim
 
 - name: Activate fonts
   shell: "fc-cache -vf ~/.local/share/fonts/"
