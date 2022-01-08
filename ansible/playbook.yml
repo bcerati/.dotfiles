@@ -27,3 +27,4 @@
     - include: tasks/gimp/gimp.yaml
     - include: tasks/traefik/traefik.yaml
     - include: tasks/go/go.yaml
+    - include: tasks/tools/tools.yaml

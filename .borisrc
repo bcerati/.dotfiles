@@ -2,6 +2,7 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
+alias cat='bat'
 alias ll='ls -alh'
 alias copy='xclip -selection clipboard'
 alias ...='cd ../..'
@@ -73,7 +74,6 @@ export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH:/usr/local/go/bin
 # END ANSIBLE MANAGED BLOCK - changes for golang
 
-
 # Recette :
 alias us_connect_rec_web='sshpass -p "adimeo_WEB" ssh -o StrictHostKeyChecking=no adimeo@192.168.7.186'
 alias us_connect_rec_bdd='sshpass -p "adimeo_BDD" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.224'
@@ -95,3 +95,14 @@ alias us_connect_prod_elk='sshpass -p "adimeo_ELK" ssh -o StrictHostKeyChecking=
 alias us_connect_prod_ldap='sshpass -p "adimeo_LDAP" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.184'
 alias us_connect_prod_ads='sshpass -p "adimeo_ADS" ssh -o StrictHostKeyChecking=no adimeo@192.168.12.183'
 
+
+vpn () {
+  if [[ $1 == "up" ]]; then
+    echo 1 | sudo nordlayer login -o adimeo_fr --silent && sudo nordlayer connect adimeo-01-OxCpmbei
+  elif [[ $1 == "down" ]]; then
+    sudo nordlayer disconnect adimeo-01-OxCpmbei && sudo nordlayer logout
+  fi;
+
+  echo "\n\nYour IP address is now ";
+  wget -qO- http://ipecho.net/plain | xargs echo
+}

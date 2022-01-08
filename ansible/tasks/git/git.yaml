@@ -7,10 +7,11 @@
     - install
     - git
 
-- name: Copy Git Config files
-  copy:
-    src: 'config/{{ item }}'
-    dest: ~/
+- name: Activate git config file
+  file:
+    src: ~/bobo_dev/config/git/{{ item }}
+    dest: ~/{{ item }}
+    state: link
   loop: ['.gitconfig', '.gitignore_global']
   tags:
     - install
