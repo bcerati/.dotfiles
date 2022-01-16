@@ -80,7 +80,7 @@
   npm:
     name: n
     global: yes
-  loop: ['typescript-language-server', 'typescript', 'intelephense']
+  loop: ['typescript-language-server', 'typescript', 'intelephense', 'bash-language-server']
   tags:
     - install
     - nodejs

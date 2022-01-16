@@ -53,4 +53,5 @@ You'll need to do some post installation steps. Here are the steps:
 :CocInstall coc-rust-analyzer # inside of nvim
 :CocInstall coc-phpls # inside of nvim
 :CocInstall coc-go # inside of nvim
+:CocInstall coc-sh # inside of nvim
 ```
