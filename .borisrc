@@ -4,6 +4,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
 alias cat='bat'
 alias ll='ls -alh'
+alias l='ls -alh'
 alias copy='xclip -selection clipboard'
 alias ...='cd ../..'
 alias ....='cd ../../..'
