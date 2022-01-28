@@ -1,0 +1,20 @@
+[user]
+        email = contact@boris-cerati.fr
+        name = Boris CERATI
+	password = your password
+[core]
+        excludesFile = ~/.gitignore_global
+        editor = /usr/bin/nvim
+        pager = diff-so-fancy | less --tabs=4 -RFX
+[alias]
+        st = status
+        co = checkout
+        cl = clone
+        r = remote
+        l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        d = diff -- . ':(exclude)composer.lock' ':(exclude)package-lock.json'
+[help]
+        autocorrect = 20
+[interactive]
+	diffFilter = diff-so-fancy --patch
+

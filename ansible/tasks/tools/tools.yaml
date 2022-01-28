@@ -1,0 +1,35 @@
+- name: Install Rust (used to build Bat from source)
+  become: true
+  shell: curl --proto '=https' --tlsv1.2 -ysSf https://sh.rustup.rs | sh
+  tags:
+    - install
+    - tools
+
+- name: Clone bat (because of a bug we cannot install it with APT in ubuntu < 20.10)
+  ansible.builtin.git:
+    repo: 'https://github.com/sharkdp/bat'
+    dest: "/tmp/bat"
+  tags:
+    - install
+    - tools
+
+- name: Build bat from source
+  shell:
+    cmd: cd /tmp/bat && cargo install --locked bat
+  tags:
+    - install
+    - tools
+
+- name: Remove bat git code
+  file: path=/tmp/bat state=absent
+  tags:
+    - install
+    - tools
+
+- name: Installing diff-so-fancy to have more usefull git diffs
+  npm:
+    name: diff-so-fancy
+    global: yes
+  tags:
+    - install
+    - tools
