@@ -13,8 +13,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/completion-nvim'
     Plug 'kabouzeid/nvim-lspinstall'
 
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
     Plug 'ryanoasis/vim-devicons'
 
     Plug 'kyazdani42/nvim-web-devicons'
@@ -36,7 +34,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'Pocco81/HighStr.nvim'
 
     Plug 'simrat39/rust-tools.nvim'
-    Plug 'folke/which-key.nvim'
 call plug#end()
 
 let mapleader=" "
@@ -55,4 +52,4 @@ augroup BOBO_DEV
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
-"lua require("nvim-php")
+lua require("bobo_dev.lsp")

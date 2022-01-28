@@ -1,38 +1,12 @@
-local sumneko_root_path = '/home/boris/personal/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+local opts = { noremap=true, silent=true }
 
-local nvim_lsp = require'lspconfig'
-
-local function config(_config)
-	return vim.tbl_deep_extend("force", {
-	}, _config or {})
-end
-
-nvim_lsp.tsserver.setup{ on_attach=require'completion'.on_attach }
-nvim_lsp.intelephense.setup{on_attach=require'completion'.on_attach}
-
-require'lspconfig'.sumneko_lua.setup {
-    cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-                -- Setup your lua path
-                path = vim.split(package.path, ';'),
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = {'vim'},
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = {
-                    [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                    [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-                },
-            },
-        },
-    },
-}
-
+require'lspconfig'.gopls.setup{
+  on_attach = function(client, bufnr)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  end,
+};
