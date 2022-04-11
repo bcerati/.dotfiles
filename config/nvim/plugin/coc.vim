@@ -9,6 +9,9 @@ endif
 "show method documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
+nnoremap <leader>ee :call CocAction('diagnosticNext')<CR>
+nnoremap <leader>ep :call CocAction('diagnosticPrevious')<CR>
+
 "rename all over the place!
 nmap <leader>rn <Plug>(coc-rename)
 

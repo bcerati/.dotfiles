@@ -9,7 +9,7 @@ local function config(_config)
 end
 
 nvim_lsp.tsserver.setup{ on_attach=require'completion'.on_attach }
-nvim_lsp.intelephense.setup{on_attach=require'completion'.on_attach}
+-- nvim_lsp.intelephense.setup{on_attach=require'completion'.on_attach}
 
 require'lspconfig'.sumneko_lua.setup {
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};

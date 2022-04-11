@@ -51,7 +51,23 @@ You'll need to do some post installation steps. Here are the steps:
 :CocInstall coc-json coc-tsserver # inside of nvim
 :CocInstall coc-snippets # inside of nvim
 :CocInstall coc-rust-analyzer # inside of nvim
-:CocInstall coc-phpls # inside of nvim
 :CocInstall coc-go # inside of nvim
 :CocInstall coc-sh # inside of nvim
+:CocInstall @yaegassy/coc-intelephense # inside of nvim
 ```
+
+Here are all the extension that are install using coc:
+
+"@yaegassy/coc-intelephense": ">=0.17.2",
+"coc-css": ">=1.3.0",
+"coc-emmet": ">=1.1.6",
+"coc-go": ">=1.3.0",
+"coc-html": ">=1.6.1",
+"coc-json": ">=1.4.1",
+"coc-prettier": ">=9.2.3",
+"coc-rust-analyzer": ">=0.61.2",
+"coc-sh": ">=0.6.1",
+"coc-tslint-plugin": ">=1.2.0",
+"coc-tsserver": ">=1.10.0",
+"coc-yank": ">=1.2.1"
+

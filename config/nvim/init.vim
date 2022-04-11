@@ -10,12 +10,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'ThePrimeagen/harpoon'
 
     Plug 'neovim/nvim-lspconfig'
-    Plug 'nvim-lua/completion-nvim'
     Plug 'kabouzeid/nvim-lspinstall'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     Plug 'ryanoasis/vim-devicons'
+    Plug 'nvim-lua/completion-nvim'
 
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'kyazdani42/nvim-tree.lua'
@@ -55,4 +55,6 @@ augroup BOBO_DEV
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
+autocmd FileType php setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType twig setlocal shiftwidth=4 softtabstop=4 expandtab
 "lua require("nvim-php")

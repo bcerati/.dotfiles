@@ -94,3 +94,13 @@ vpn () {
   echo "\n\nYour IP address is now ";
   wget -qO- http://ipecho.net/plain | xargs echo
 }
+
+fssh() {
+  if [[ ! -z $1 ]]; then
+    $(cat ~/.ssh/config | grep -E "^Host (.*)-$1$" | sed "s/Host /ssh /g" | fzf)
+  else
+    $(cat ~/.ssh/config | grep -E "^Host (.*)$" | sed "s/Host /ssh /g" | fzf)
+  fi;
+}
+
+alias adimeo="/home/boris/Documents/Dev/Pro/internal-tools/adimeo/adimeo $@"
