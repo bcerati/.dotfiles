@@ -103,4 +103,3 @@ fssh() {
   fi;
 }
 
-alias adimeo="/home/boris/Documents/Dev/Pro/internal-tools/adimeo/adimeo $@"
