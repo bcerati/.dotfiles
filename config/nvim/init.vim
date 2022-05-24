@@ -18,7 +18,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/completion-nvim'
 
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'kyazdani42/nvim-tree.lua'
 
     Plug 'romgrk/barbar.nvim'
 
@@ -29,11 +28,15 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'nelsyeung/twig.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-    Plug 'bling/vim-bufferline'
     Plug 'vim-airline/vim-airline'
     Plug 'editorconfig/editorconfig-vim'
 
     Plug 'Pocco81/HighStr.nvim'
+
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'MunifTanjim/nui.nvim'
+
+    Plug 'nvim-neo-tree/neo-tree.nvim'
 
     Plug 'simrat39/rust-tools.nvim'
     Plug 'folke/which-key.nvim'

@@ -37,8 +37,10 @@ nnoremap <SPACE> <Nop>
 nnoremap <leader>x <cmd>bd<CR>
 nnoremap <leader>j <C-w>j<CR>
 nnoremap <leader>k <C-w>k<CR>
-nnoremap <leader>h <C-w>h<CR>
-nnoremap <leader>l <C-w>l<CR>
+nnoremap <leader>lm <cmd>NeoTreeFocus<CR>
+nnoremap <leader>cm <cmd>NeoTreeClose<CR>
+nnoremap <leader>mf <cmd>NeoTreeFloatToggle<CR>
+nnoremap <leader>ri <C-w>l<CR>
 
 "searching
 nmap <C-F> :vimgrep %
@@ -50,6 +52,10 @@ nnoremap <C-q> :call ToggleQFList(1)<CR>
 nnoremap <leader>q :call ToggleQFList(0)<CR>
 
 nnoremap <C-b> :BufferNext<CR>
+
+" disable netrw
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 
 let g:bobo_dev_qf_l = 0
 let g:bobo_dev_qf_g = 0
