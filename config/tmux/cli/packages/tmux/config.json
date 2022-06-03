@@ -19,7 +19,7 @@
           }
         ]
       },
-      
+
       {
         "name": "CODE",
         "commands": [
@@ -28,13 +28,13 @@
             "enter": true,
             "clear": true
           },
-          
+
           {
             "run": "nvim ."
           }
         ]
       },
-      
+
       {
         "name": "APP_LOGS",
         "commands": [
@@ -45,6 +45,60 @@
           },
           {
             "run": "docker logs -f fda_php",
+            "enter": true,
+            "needWaitGroup": true
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "name": "cvl",
+    "windows": [
+      {
+        "name": "WORKDIR",
+        "commands": [
+          {
+            "run": "pro && cd CVDL/centre-val-de-loire",
+            "enter": true,
+            "clear": true
+          },
+
+          {
+            "run": "docker-compose up -d",
+            "enter": true,
+            "waitForIt": true,
+            "clear": true
+          }
+        ]
+      },
+
+      {
+        "name": "CODE",
+        "commands": [
+          {
+            "run": "pro && cd CVDL/centre-val-de-loire",
+            "enter": true,
+            "clear": true
+          },
+
+          {
+            "run": "nvim ."
+          }
+        ]
+      },
+
+      {
+        "name": "APP_LOGS",
+        "commands": [
+          {
+            "run": "pro && cd CVDL/centre-val-de-loire",
+            "enter": true,
+            "clear": true
+          },
+          {
+            "run": "docker logs -f cvl_cre_web",
             "enter": true,
             "needWaitGroup": true
           }
@@ -73,7 +127,7 @@
           }
         ]
       },
-      
+
       {
         "name": "CODE",
         "commands": [
@@ -82,13 +136,13 @@
             "enter": true,
             "clear": true
           },
-          
+
           {
             "run": "nvim ."
           }
         ]
       },
-      
+
       {
         "name": "APP_LOGS",
         "commands": [

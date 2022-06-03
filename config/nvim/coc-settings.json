@@ -1,4 +1,5 @@
 {
+  "rust-analyzer.enable": true,
   "prettier.requireConfig": true,
   "suggest.noselect": false,
   "coc.preferences.noselect": false,

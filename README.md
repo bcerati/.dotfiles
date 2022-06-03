@@ -71,3 +71,14 @@ Here are all the extension that are install using coc:
 "coc-tsserver": ">=1.10.0",
 "coc-yank": ">=1.2.1"
 
+### Install rust-analyzer
+
+For rust programming, I need to install rust analyzer using these commands:
+
+```sh
+mkdir -p ~/.local/bin
+curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+chmod +x ~/.local/bin/rust-analyzer
+```
+
+here is the doc: https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/manual.adoc#rust-analyzer-language-server-binary
