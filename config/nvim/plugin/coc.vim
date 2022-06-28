@@ -1,4 +1,5 @@
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gu <Plug>(coc-references)
 
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()

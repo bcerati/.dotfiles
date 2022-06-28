@@ -40,6 +40,9 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'simrat39/rust-tools.nvim'
     Plug 'folke/which-key.nvim'
+
+    Plug 'tomlion/vim-solidity'
+
 call plug#end()
 
 let mapleader=" "

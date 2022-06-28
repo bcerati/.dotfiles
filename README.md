@@ -50,6 +50,7 @@ You'll need to do some post installation steps. Here are the steps:
 ```shell
 :CocInstall coc-json coc-tsserver # inside of nvim
 :CocInstall coc-snippets # inside of nvim
+:CocInstall coc-tsserver
 :CocInstall coc-rust-analyzer # inside of nvim
 :CocInstall coc-go # inside of nvim
 :CocInstall coc-sh # inside of nvim
