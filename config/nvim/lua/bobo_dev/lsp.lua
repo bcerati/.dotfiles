@@ -8,7 +8,6 @@ local function config(_config)
 	}, _config or {})
 end
 
-nvim_lsp.tsserver.setup{ on_attach=require'completion'.on_attach }
 -- nvim_lsp.intelephense.setup{on_attach=require'completion'.on_attach}
 
 nvim_lsp.sumneko_lua.setup {

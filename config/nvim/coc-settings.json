@@ -1,4 +1,5 @@
 {
+  "rust-analyzer.server.path": "/home/boris/.config/coc/extensions/coc-rust-analyzer-data/rust-analyzer",
   "rust-analyzer.enable": true,
   "prettier.requireConfig": true,
   "suggest.noselect": false,

@@ -15,7 +15,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     Plug 'ryanoasis/vim-devicons'
-    Plug 'nvim-lua/completion-nvim'
 
     Plug 'kyazdani42/nvim-web-devicons'
 

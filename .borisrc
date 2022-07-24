@@ -103,7 +103,6 @@ fssh() {
   fi;
 }
 
-
 # override the git_branch function from ZSHRC => it does'nt work on subdirectories...
 git_branch() {
     gitBranch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ on \1/')

@@ -37,7 +37,8 @@ nnoremap <SPACE> <Nop>
 nnoremap <leader>x <cmd>bd<CR>
 nnoremap <leader>j <C-w>j<CR>
 nnoremap <leader>k <C-w>k<CR>
-nnoremap <leader>lm <cmd>NeoTreeFocus<CR>
+nnoremap <leader>mm <cmd>NeoTreeFocusToggle<CR>
+nnoremap <leader>fm <cmd>NeoTreeRevealToggle<CR>
 nnoremap <leader>cm <cmd>NeoTreeClose<CR>
 nnoremap <leader>mf <cmd>NeoTreeFloatToggle<CR>
 nnoremap <leader>ri <C-w>l<CR>
