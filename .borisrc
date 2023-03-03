@@ -2,7 +2,7 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
 
-alias cat='bat'
+alias cat='batcat'
 alias ll='ls -alh'
 alias l='ls -alh'
 alias copy='xclip -selection clipboard'
@@ -16,9 +16,9 @@ alias c="vim ."
 alias e='exit';
 alias my-ip="wget -qO- http://ipecho.net/plain | xargs echo"
 alias composer=/usr/local/bin/composer
-alias nvim="/usr/local/bin/nvim"
+alias nvim="/usr/bin/nvim"
 alias vim="nvim"
-
+alias keyboard="start-stop-daemon -S -b -x /usr/bin/roccat-vulcan -- -c 0:-10000,-10000,-10000"
 alias e='exit'
 alias br='i3lock'
 alias le='sudo shutdown -h now'

@@ -221,7 +221,7 @@ if [ -f /etc/zsh_command_not_found ]; then
 fi
 export GOPATH=$HOME/go
 
-source ~/bobo_dev/.borisrc
+source ~/Documents/Dev/Perso/.dotfiles/.borisrc
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"

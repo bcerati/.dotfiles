@@ -177,7 +177,7 @@ _G.packer_plugins = {
   ["nvim-php"] = {
     loaded = true,
     path = "/home/boris/.local/share/nvim/site/pack/packer/start/nvim-php",
-    url = "/home/boris/Documents/Dev/Perso/nvim-plugins/nvim-php"
+    url = "https://github.com//home/boris/Documents/Dev/Perso/nvim-plugins/nvim-php"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
