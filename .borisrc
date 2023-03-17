@@ -19,6 +19,7 @@ alias composer=/usr/local/bin/composer
 alias nvim="/usr/bin/nvim"
 alias vim="nvim"
 alias keyboard="start-stop-daemon -S -b -x /usr/bin/roccat-vulcan -- -c 0:-10000,-10000,-10000"
+alias casque="bluetoothctl connect 14:3F:A6:77:E6:CB"
 alias e='exit'
 alias br='i3lock'
 alias le='sudo shutdown -h now'
