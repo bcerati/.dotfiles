@@ -35,8 +35,6 @@ return require('packer').startup(function()
     'nvim-treesitter/playground',
   }
 
-  use "/home/boris/Documents/Dev/Perso/nvim-plugins/nvim-php"
-
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
