@@ -24,6 +24,11 @@ end);
 
 -- fuzzy find a search in all files (including git ignore ones)
 nnoremap("<leader>sf", function()
+    require('telescope.builtin').live_grep()
+end);
+
+-- fuzzy find a search in all files (including git ignore ones)
+nnoremap("<leader>ps", function()
     require('telescope.builtin').live_grep({ additional_args = function(opts) return { "--no-ignore" } end })
 end);
 

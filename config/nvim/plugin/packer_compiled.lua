@@ -177,7 +177,7 @@ _G.packer_plugins = {
   ["nvim-php"] = {
     loaded = true,
     path = "/home/boris/.local/share/nvim/site/pack/packer/start/nvim-php",
-    url = "https://github.com//home/boris/Documents/Dev/Perso/nvim-plugins/nvim-php"
+    url = "/home/boris/Documents/Dev/Perso/nvim-plugins/nvim-php"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -213,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/boris/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-easymotion"] = {
+    loaded = true,
+    path = "/home/boris/.local/share/nvim/site/pack/packer/start/vim-easymotion",
+    url = "https://github.com/easymotion/vim-easymotion"
   },
   ["vim-prettier"] = {
     loaded = true,
