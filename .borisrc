@@ -92,3 +92,5 @@ git_branch() {
 }
 
 export KUBE_EDITOR=/usr/local/bin/nvim
+
+nitrogen --set-auto /home/boris/Documents/Dev/Perso/.dotfiles/config/i3/i3/wallpaper.png --head=0 2> /dev/null && nitrogen --set-auto /home/boris/Documents/Dev/Perso/.dotfiles/config/i3/i3/wallpaper.png --head=1 2> /dev/null 

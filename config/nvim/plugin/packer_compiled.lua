@@ -169,15 +169,15 @@ _G.packer_plugins = {
     path = "/home/boris/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-fzf"] = {
+    loaded = true,
+    path = "/home/boris/.local/share/nvim/site/pack/packer/start/nvim-fzf",
+    url = "https://github.com/vijaymarupudi/nvim-fzf"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/boris/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-php"] = {
-    loaded = true,
-    path = "/home/boris/.local/share/nvim/site/pack/packer/start/nvim-php",
-    url = "/home/boris/Documents/Dev/Perso/nvim-plugins/nvim-php"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -208,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/boris/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/boris/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
