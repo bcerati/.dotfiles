@@ -72,5 +72,6 @@ return require('packer').startup(function()
 
   use 'ray-x/go.nvim'
   use 'github/copilot.vim'
+  use 'rust-lang/rust.vim'
 end);
 
