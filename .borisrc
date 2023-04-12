@@ -25,6 +25,13 @@ alias br='i3lock'
 alias le='sudo shutdown -h now'
 alias pres="lsof -i :9000 | awk 'NR > 1 {print $2}' | xargs -r kill -15 2> /dev/null && php -S 0.0.0.0:9000 -t . 1> /dev/null 2>&1 & mdp index.md"
 
+screens() {
+  if [ $1 = "home" ]; then
+    xrandr --auto --output HDMI-1 --mode 1920x1080 --left-of HDMI-2;
+    xrandr --output HDMI-1 --primary;
+  fi;
+}
+
 in() {
   container=$(docker ps --format "{{.Names}}" | fzf)
 
