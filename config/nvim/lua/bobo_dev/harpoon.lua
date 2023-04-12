@@ -7,12 +7,20 @@ nnoremap("<leader>a", function()
 end);
 
 -- toggle harpoon floating menu
-nnoremap("<leader>ha", function()
+nnoremap("<leader>hh", function()
     require('harpoon.ui').toggle_quick_menu();
 end);
 
 -- toggle harpoon floating menu
-nnoremap("<leader>hh", "<cmd>Telescope harpoon marks<CR>");
+nnoremap("<leader>ha", "<cmd>Telescope harpoon marks<CR>");
+
+nnoremap("<C-Down>", function () 
+  require('harpoon.ui').nav_next();
+end);
+
+nnoremap("<C-Up>", function () 
+  require('harpoon.ui').nav_prev();
+end);
 
 require("telescope").load_extension('harpoon')
 

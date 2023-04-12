@@ -23,6 +23,7 @@ alias casque="bluetoothctl connect 14:3F:A6:77:E6:CB"
 alias e='exit'
 alias br='i3lock'
 alias le='sudo shutdown -h now'
+alias pres="lsof -i :9000 | awk 'NR > 1 {print $2}' | xargs -r kill -15 2> /dev/null && php -S 0.0.0.0:9000 -t . 1> /dev/null 2>&1 & mdp index.md"
 
 screens() {
   if [ $1 = "home" ]; then
