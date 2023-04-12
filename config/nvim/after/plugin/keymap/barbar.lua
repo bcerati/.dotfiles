@@ -10,8 +10,7 @@ local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
 nnoremap('<A-Tab>', '<Cmd>BufferNext<CR>', bufopts);
 nnoremap('<leader>b', '<Cmd>BufferPick<CR>', bufopts);
-nnoremap('<C-b>', '<Cmd>BufferPick<CR>', bufopts);
-inoremap('<C-b>', '<Cmd>BufferPick<CR>', bufopts);
+nnoremap('<C-b>', '<Cmd>Buffers<CR>', bufopts);
 nnoremap('<leader>x', '<Cmd>BufferClose<CR>', bufopts);
 
 nnoremap('<A-&>', '<Cmd>BufferGoto 1<CR>', bufopts);

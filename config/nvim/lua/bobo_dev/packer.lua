@@ -27,6 +27,12 @@ return require('packer').startup(function()
   use "lukas-reineke/indent-blankline.nvim"
 
   use {
+    'junegunn/fzf.vim',
+    requires = { 'junegunn/fzf', run = ':call fzf#install()' }
+  }
+
+
+  use {
     'nvim-treesitter/nvim-treesitter',
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
