@@ -34,11 +34,19 @@ screens() {
 
 in() {
   container=$(docker ps --format "{{.Names}}" | fzf)
+  
+  docker exec $container which bash > /dev/null 2>&1
+  hasBash=$(echo $?)
 
-  if [[ ! -z $1 ]]; then
-    docker exec -ti $container $1
-  else
+  docker exec $container which sh > /dev/null 2>&1
+  hasSh=$(echo $?)
+
+  if [[ $hasBash == "0" ]]; then
     docker exec -ti $container bash
+  elif [[ $hasSh == "0" ]]; then
+    docker exec -ti $container sh
+  else
+    echo "Cannot find a way to attach to $container";
   fi;
 }
 
