@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/boris/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
+  ["fzf-lsp.nvim"] = {
+    loaded = true,
+    path = "/home/boris/.local/share/nvim/site/pack/packer/start/fzf-lsp.nvim",
+    url = "https://github.com/gfanto/fzf-lsp.nvim"
+  },
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/boris/.local/share/nvim/site/pack/packer/start/fzf.vim",

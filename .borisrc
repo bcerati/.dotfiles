@@ -61,7 +61,7 @@ alias pro='dev && cd Pro'
 alias k="kubectl"
 alias gr="go run ."
 
-export PATH="$HOME/.composer/vendor/bin:/home/boris/go/bin:$PATH"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 gophp() {
     echo "Current version: "$(php -v | head -n1 | cut -d" " -f2)
