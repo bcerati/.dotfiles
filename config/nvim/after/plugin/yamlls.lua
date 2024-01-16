@@ -3,9 +3,10 @@ require('lspconfig').yamlls.setup({
     settings = {
         yaml = {
             schemas = {
+                --kubernetes = '/*.yaml',
                 ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
                 ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-                kubernetes = '/*.yaml',
+                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
             },
             hover = false,
             validate = true,
@@ -34,5 +35,4 @@ require('lspconfig').yamlls.setup({
         }
     }
 })
-
 
