@@ -55,6 +55,11 @@ return require('packer').startup(function()
   }
 
   use {
+  'gfanto/fzf-lsp.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {
       -- LSP Support

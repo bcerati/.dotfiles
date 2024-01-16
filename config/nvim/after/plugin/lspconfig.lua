@@ -7,6 +7,7 @@ require('lspconfig').yamlls.setup({
                 ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
                 ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
                 ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.{yml,yaml}",
+                kubernetes = '/*.yaml',
             },
             hover = false,
             validate = true,
@@ -36,3 +37,12 @@ require('lspconfig').yamlls.setup({
     }
 })
 
+require'lspconfig'.lua_ls.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {"vim", "use"},
+      },
+    },
+  },
+})
