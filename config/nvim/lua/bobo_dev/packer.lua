@@ -3,7 +3,7 @@ return require('packer').startup(function()
   use 'morhetz/gruvbox'
 
   use 'prettier/vim-prettier'
-  
+
   use {
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
@@ -13,17 +13,17 @@ return require('packer').startup(function()
   'ThePrimeagen/harpoon',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  
+
   use {
   'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  
+
   use "lukas-reineke/indent-blankline.nvim"
 
   use {
@@ -50,8 +50,7 @@ return require('packer').startup(function()
   }
 
   use {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
+    'ggandor/leap.nvim',
   }
 
   use {
