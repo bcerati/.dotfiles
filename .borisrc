@@ -12,12 +12,11 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias bye='sudo shutdown -h now'
-alias c="vim ."
+alias c="nvim ."
+alias vim="nvim"
 alias e='exit';
 alias my-ip="wget -qO- http://ipecho.net/plain | xargs echo"
 alias composer=/usr/local/bin/composer
-alias nvim="/usr/bin/nvim"
-alias vim="nvim"
 alias keyboard="start-stop-daemon -S -b -x /usr/bin/roccat-vulcan -- -c 0:-10000,-10000,-10000"
 alias casque="bluetoothctl connect 14:3F:A6:77:E6:CB"
 alias e='exit'
@@ -98,9 +97,10 @@ clear_folders() {
 
 export PATH=~/.npm-global/bin:$PATH
 # BEGIN ANSIBLE MANAGED BLOCK - changes for golang
+export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH:/usr/local/go/bin
+export PATH=$GOROOT/bin:$GOBIN:$PATH:/usr/local/go/bin
 # END ANSIBLE MANAGED BLOCK - changes for golang
 
 fssh() {
@@ -120,3 +120,6 @@ git_branch() {
 export KUBE_EDITOR=/usr/local/bin/nvim
 
 nitrogen --set-auto /home/boris/Documents/Dev/Perso/.dotfiles/config/i3/i3/wallpaper.png --head=0 2> /dev/null && nitrogen --set-auto /home/boris/Documents/Dev/Perso/.dotfiles/config/i3/i3/wallpaper.png --head=1 2> /dev/null 
+
+export PATH="$PATH:/opt/nvim/"
+

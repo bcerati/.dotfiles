@@ -83,3 +83,4 @@ chmod +x ~/.local/bin/rust-analyzer
 ```
 
 here is the doc: https://github.com/rust-lang/rust-analyzer/blob/master/docs/user/manual.adoc#rust-analyzer-language-server-binary
+

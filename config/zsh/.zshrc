@@ -233,3 +233,5 @@ alias luamake=/home/boris/tools/lua-language-server/3rd/luamake/luamake
 export ZSH="/home/boris/.oh-my-zsh"
 autoload -U compinit; compinit
 autoload -U compinit; compinit
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
