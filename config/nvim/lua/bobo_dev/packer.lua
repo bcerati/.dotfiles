@@ -10,6 +10,10 @@ return require('packer').startup(function()
   }
 
   use {
+  'rose-pine/neovim'
+  }
+
+  use {
   'ThePrimeagen/harpoon',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -30,7 +34,6 @@ return require('packer').startup(function()
     'junegunn/fzf.vim',
     requires = { 'junegunn/fzf', run = ':call fzf#install()' }
   }
-
 
   use {
     'nvim-treesitter/nvim-treesitter',

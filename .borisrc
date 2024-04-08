@@ -12,6 +12,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias bye='sudo shutdown -h now'
+alias nvim="/opt/nvim/nvim"
 alias c="nvim ."
 alias vim="nvim"
 alias e='exit';

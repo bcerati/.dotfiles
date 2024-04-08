@@ -234,4 +234,26 @@ export ZSH="/home/boris/.oh-my-zsh"
 autoload -U compinit; compinit
 autoload -U compinit; compinit
 
+
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+alias prod="ssh calmedica@185.66.234.20 -p 2023"
+alias prod_db="ssh calmedica@185.66.234.20 -p 2024"
+
+alias supervisor="ssh calmedica@185.66.234.20 -p 2026"
+alias cron="ssh calmedica@185.66.234.20 -p 2025"
+
+alias picard="ssh calmedica@185.66.234.20 -p 2022"
+alias picard_db="ssh calmedica@185.66.234.20 -p 2022"
+
+alias picard="ssh calmedica@185.66.234.20 -p 2022"
+alias picard_db="ssh calmedica@185.66.234.20 -p 2022"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/boris/google-cloud-sdk/path.zsh.inc' ]; then . '/home/boris/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/boris/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/boris/google-cloud-sdk/completion.zsh.inc'; fi
+
+alias vpn='sudo openvpn --config /home/boris/.ssh/Boris-OpenVPN.ovpn --auth-user-pass /home/boris/.ssh/openvpn.txt'
+
